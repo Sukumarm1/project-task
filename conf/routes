@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+#controllers mapping
+GET     /user                       controllers.AppController.getAll
+
+#controllers mapping
+GET     /api/todos                  controllers.AppController.getAll
+GET     /api/todos/:id                  controllers.AppController.getById(id: String)
+POST    /api/todos/add              controllers.AppController.add
+PUT     /api/todos/update/:id           controllers.AppController.update(id: String)
+DELETE /api/todos/delete/:id         controllers.AppController.delete(id: String)
